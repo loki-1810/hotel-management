@@ -1,0 +1,410 @@
+/* Add your CSS styles here */
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(45deg, #1f1c2c, #928dab, #ff6f61);
+    background-size: 200% 200%;
+    animation: gradientBackground 10s ease infinite;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+@keyframes gradientBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-wrap: wrap; /* Prevents overflowing */
+    width: 100%;
+    text-align: center;
+}
+
+h2 {
+    color: #007bff;
+}
+.cta-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+@keyframes gradientBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px 5%;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+    border-bottom: 2px solid #00ffea;
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-size: 2em;
+    color: #00ffea;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    animation: logoAnimation 1s ease-in-out;
+    margin-right: 50px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 25px;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: #00ffea;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #00ffea;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 255, 234, 0.3);
+}
+.row {
+    display: flex;
+    justify-content: center; /* Center columns */
+    gap: 20px; /* Reduce unnecessary space */
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 20px; /* Adjust spacing */
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: url('gaming-bg.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 120px;
+    padding-bottom: 40px;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 4em;
+    margin-bottom: 20px;
+    animation: slideIn 2s ease-out;
+}
+
+.hero p {
+    font-size: 1.6em;
+    margin-bottom: 40px;
+    line-height: 1.5;
+}
+
+.hero .cta-button {
+    animation: pulse 1.5s infinite;
+    background-color: #00ffea;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 234, 0.5);
+}
+
+.hero .cta-button:hover {
+    background-color: #00bfa5;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 255, 234, 0.7);
+}
+
+/* Animations */
+@keyframes slideIn {
+    0% { transform: translateY(-50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Scrolling Sections */
+.scrolling-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: #111;
+}
+
+.scroll-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px;
+    scroll-behavior: smooth;
+}
+
+.scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+.scroll-box {
+    min-width: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.scroll-box img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.scroll-box:hover {
+    transform: scale(1.05);
+}
+
+/* Order Food Section */
+.order-food {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(180deg, #222, #333);
+}
+
+/* Footer */
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 40px;
+    text-align: center;
+    color: #fff;
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.footer-column h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.footer-column p, .footer-column ul {
+    font-family: 'Poppins', sans-serif;
+}
+
+.social-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.social-links li a {
+    color: #fff;
+    font-size: 22px;
+    transition: color 0.3s ease;
+}
+
+.social-links li a:hover {
+    color: #00ffea;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .scroll-container {
+        flex-wrap: wrap;
+    }
+
+    .footer-columns {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .game-cards, .community-features {
+        flex-direction: column;
+    }
+
+    header ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    header ul li a {
+        padding: 10px 15px;
+        font-size: 16px;
+    }
+}
+/* Scrolling Section */
+.scrolling-section {
+    padding: 60px 10%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    margin-bottom: 50px;
+    color: #fff;
+}
+
+/* Section Heading */
+.scrolling-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    color: #00ffea;
+}
+
+/* Scroll Container */
+.scroll-container {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    padding: 20px;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+/* Scroll Box */
+.scroll-box {
+    flex: 0 0 250px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.scroll-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 15px rgba(0, 255, 234, 0.7);
+}
+
+/* Scroll Box Images */
+.scroll-box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Scroll Box Titles */
+.scroll-box h3 {
+    font-size: 1.3em;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* --- Booking Box --- */
+.booking-box, .order-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    margin: 40px auto;
+    width: 50%;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.booking-box:hover, .order-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(0, 255, 234, 0.7);
+}
+
+/* Box Heading */
+.booking-box h2, .order-box h2 {
+    font-size: 2em;
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 15px;
+    color: #00ffea;
+}
+
+/* CTA Buttons */
+.cta-button {
+    display: inline-block;
+    background-color: #00ffea;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 234, 0.5);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Button Hover */
+.cta-button:hover {
+    background-color: #00bfa5;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 255, 234, 0.7);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .scroll-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .scroll-box {
+        width: 80%;
+    }
+
+    .booking-box, .order-box {
+        width: 80%;
+    }
+}

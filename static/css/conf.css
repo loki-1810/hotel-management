@@ -1,0 +1,123 @@
+/* pay.css */
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(120deg, #f0f4ff, #e0e7ff);
+    color: #333;
+    padding: 40px 20px;
+  }
+  
+  .payment-wrapper {
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    animation: fadeInUp 1s ease;
+  }
+  
+  .user-info-box, .payment-form-box {
+    padding: 30px;
+    flex: 1 1 100%;
+  }
+  
+  @media (min-width: 768px) {
+    .user-info-box {
+      flex: 1 1 40%;
+      background: #f9fbff;
+      border-right: 1px solid #eee;
+    }
+  
+    .payment-form-box {
+      flex: 1 1 60%;
+    }
+  }
+  
+  .user-info-box h3,
+  .payment-form-box h2 {
+    color: #2d3e50;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+  }
+  
+  .user-info-box p {
+    margin: 10px 0;
+    line-height: 1.5;
+  }
+  
+  .payment-method-box {
+    background: #f1f5ff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+  }
+  
+  .payment-method-box label {
+    margin-right: 20px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .payment-section {
+    margin-bottom: 25px;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .payment-section label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+  }
+  
+  .payment-section input,
+  .payment-section select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease;
+    font-size: 1rem;
+  }
+  
+  .payment-section input:focus,
+  .payment-section select:focus {
+    border-color: #4974f0;
+    outline: none;
+  }
+  
+  button[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(90deg, #4974f0, #667eea);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 6px 20px rgba(73, 116, 240, 0.4);
+  }
+  
+  button[type="submit"]:hover {
+    background: linear-gradient(90deg, #3a5de0, #546cd9);
+    transform: translateY(-2px);
+  }
+  
+  /* Smooth fade animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Stay</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script defer src="/static/js/script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">🏨 Luxury Stay</div>
+        <nav>
+            <ul>
+                <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="/rooms"><i class="fas fa-bed"></i> Rooms</a></li>
+                <li><a href="/restaurant"><i class="fas fa-utensils"></i> Restaurant</a></li>
+                <li><a href="#contact"><i class="fas fa-phone"></i> Contact</a></li>
+            </ul>   
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero animated">
+        <h1>Welcome to Luxury Stay</h1>
+        <p>Experience the finest hospitality with breathtaking views, luxury rooms, and world-class dining.</p>
+        <a href="/rooms" class="cta-button">Book a Room</a>
+    </section>
+
+    <!-- Scrolling Rooms Section -->
+    <section id="rooms" class="scrolling-section animated">
+        <h2>🏨 Our Luxurious Rooms</h2>
+        <div class="scroll-container">
+            <div class="scroll-box" onclick="window.location.href='/rooms'">
+                <img src="/static/images/room1.jpg" alt="Deluxe Room">
+                <h3>Deluxe Room</h3>
+            </div>
+            <div class="scroll-box" onclick="window.location.href='/rooms'">
+                <img src="/static/images/room2.jpg" alt="Executive Suite">
+                <h3>Executive Suite</h3>
+            </div>
+            <div class="scroll-box" onclick="window.location.href='/rooms'">
+                <img src="/static/images/room3.jpg" alt="Penthouse">
+                <h3>Penthouse</h3>
+            </div>
+        </div>
+
+        <!-- Book Now Button -->
+        <div class="button-container">
+            <a href="/rooms" class="cta-button">🛎️ Book Now</a>
+        </div>
+    </section>
+
+    <!-- Scrolling Restaurant Food Section -->
+    <section id="restaurant" class="scrolling-section animated">
+        <h2>🍽️ Our Exquisite Cuisine</h2>
+        <div class="scroll-container">
+            <div class="scroll-box" onclick="window.location.href='/restaurant'">
+                <img src="/static/images/food1.jpg" alt="Food 1">
+                <h3>Saffron risotto with forest mushrooms</h3>
+            </div>
+            <div class="scroll-box" onclick="window.location.href='/restaurant'">
+                <img src="/static/images/food2.jpg" alt="Food 2">
+                <h3>Chicken tagine makful</h3>
+            </div>
+            <div class="scroll-box" onclick="window.location.href='/restaurant'">
+                <img src="/static/images/food3.jpg" alt="Food 3">
+                <h3>Chinese chicken salad</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Food Section -->
+    <section id="order-food" class="order-food animated">
+        <h2>🍔 Craving Something Delicious?</h2>
+        <p>Order your favorite dishes now and enjoy a luxury dining experience!</p>
+        <div class="button-container">
+            <a href="/restaurant" class="cta-button">🍽️ Order Food</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <footer id="contact">
+        <div class="footer-columns">
+            <div class="footer-column">
+                <h3>📞 Contact Us</h3>
+                <p>123 Luxury St, Dream City</p>
+                <p>Email: contact@luxurystay.com</p>
+                <p>Phone: +123 456 7890</p>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <ul class="social-links">
+                    <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

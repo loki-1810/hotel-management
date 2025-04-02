@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mock Payment</title>
+  <link rel="stylesheet" href="/static/css/conf.css">
+  <style>
+    .payment-section {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .payment-section.active {
+      display: block;
+      opacity: 1;
+    }
+
+    .payment-method-box input[type="radio"] {
+      margin-right: 8px;
+    }
+
+    .payment-method-box label {
+      display: inline-block;
+      margin-right: 15px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .payment-method-box {
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="payment-wrapper">
+    <!-- Customer Info -->
+    <div class="user-info-box">
+      <h3>👤 Customer Details</h3>
+      <p><strong>Name:</strong> {{ user_name }}</p>
+      <!-- <p><strong>Contact:</strong> {{ user_contact }}</p> -->
+
+      {% if order_type == "room" %}
+        <p><strong>Room Type:</strong> {{ room_type }}</p>
+        <p><strong>Check-in:</strong> {{ checkin_date }}</p>
+        <p><strong>Check-out:</strong> {{ checkout_date }}</p>
+        <p><strong>Guests:</strong> {{ guests }}</p>
+        <p><strong>Total:</strong> ${{ room_price }}</p>
+      {% elif order_type == "food" %}
+        <p><strong>Dish:</strong> {{ food_name }}</p>
+        <p><strong>Quantity:</strong> {{ quantity }}</p>
+        <p><strong>Total:</strong> ${{ food_price }}</p>
+      {% endif %}
+      <a href="/landing">
+        <button type="button">Done</button>
+      </a>
+    </div>
+  </div>
+  </div>
+
+  <!-- JavaScript for Dynamic Switching -->
+  <script>
+    const radioButtons = document.querySelectorAll('input[name="payment_method"]');
+    const sections = {
+      card: document.getElementById("card-section"),
+      upi: document.getElementById("upi-section"),
+      netbanking: document.getElementById("netbanking-section"),
+      wallet: document.getElementById("wallet-section"),
+    };
+
+    const requiredFields = {
+      card: ["card_number", "expiry", "cvv"],
+      upi: ["upi_id"],
+      netbanking: ["bank"],
+      wallet: ["wallet_select"],
+    };
+
+    function switchSection(selected) {
+      // Hide all sections and remove required
+      for (let key in sections) {
+        sections[key].classList.remove("active");
+        requiredFields[key].forEach(id => {
+          const field = document.getElementById(id);
+          if (field) field.required = false;
+        });
+      }
+
+      // Show selected section and add required
+      sections[selected].classList.add("active");
+      requiredFields[selected].forEach(id => {
+        const field = document.getElementById(id);
+        if (field) field.required = true;
+      });
+    }
+
+    radioButtons.forEach(btn => {
+      btn.addEventListener("change", () => switchSection(btn.value));
+    });
+
+    // Initial load
+    switchSection("card");
+  </script>
+</body>
+</html>

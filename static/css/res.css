@@ -1,0 +1,276 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Body */
+.restaurant-body {
+    background: #1e1e2f;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Header */
+.restaurant-header {
+    background: #111;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffcc70;
+    animation: logoFade 1s ease-in;
+}
+@keyframes logoFade {
+    0% {opacity: 0; transform: scale(0.8);}
+    100% {opacity: 1; transform: scale(1);}
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+.nav-links li a:hover {
+    color: #ffcc70;
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(to right, #111, #222);
+}
+.hero-section h1 {
+    font-size: 48px;
+    color: #ffcc70;
+    margin-bottom: 10px;
+}
+.hero-section p {
+    font-size: 20px;
+    color: #ddd;
+}
+
+/* Food Section */
+.food-section {
+    padding: 60px 40px;
+    background: #2a2a3d;
+    text-align: center;
+}
+.food-section h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #ffcc70;
+}
+.food-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+.food-card {
+    background: #333;
+    border-radius: 15px;
+    overflow: hidden;
+    width: 280px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    transition: transform 0.3s;
+}
+.food-card:hover {
+    transform: scale(1.05);
+}
+.food-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+.food-card h3 {
+    color: #ffcc70;
+    margin-top: 10px;
+}
+.food-card p {
+    color: #ddd;
+    padding: 5px 15px;
+}
+.food-card button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    background: #ffcc70;
+    color: #111;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+.food-card button:hover {
+    background: #ffc040;
+}
+
+/* Scrolling Section */
+.scrolling-section {
+    padding: 60px 40px;
+    background: #1f1f2e;
+    text-align: center;
+}
+.scroll-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding-top: 20px;
+    scrollbar-width: none;
+}
+.scroll-container::-webkit-scrollbar {
+    display: none;
+}
+.scroll-box {
+    flex: 0 0 auto;
+    width: 240px;
+    height: 160px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.scroll-box:hover {
+    transform: scale(1.1);
+}
+.scroll-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Popup Card */
+.food-booking-popup {
+    position: fixed;
+    top: 0; left: 0;
+    height: 100vh; width: 100vw;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+.popup-content {
+    background: #fff;
+    color: #000;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    animation: popIn 0.4s ease-in-out;
+}
+@keyframes popIn {
+    0% {transform: scale(0.8); opacity: 0;}
+    100% {transform: scale(1); opacity: 1;}
+}
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 28px;
+    cursor: pointer;
+}
+.confirm-btn {
+    margin-top: 20px;
+    padding: 10px 25px;
+    background: #28a745;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.confirm-btn:hover {
+    background: #218838;
+}
+
+/* Footer */
+.restaurant-footer {
+    background: #111;
+    text-align: center;
+    padding: 40px 20px;
+    color: #bbb;
+}
+.restaurant-footer h2 {
+    color: #ffcc70;
+    margin-bottom: 10px;
+}
+.restaurant-footer p {
+    margin-top: 5px;
+}
+.food-booking-popup {
+    display: none; /* hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    width: 300px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Optional animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.food-booking-popup {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+.popup-content {
+    max-width: 400px;
+    margin: 0 auto;
+}

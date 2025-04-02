@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Dining - Restaurant</title>
+    <link rel="stylesheet" href="/static/css/res.css">
+    <script defer src="/static/js/script.js"></script>
+</head>
+<body class="restaurant-body">
+
+    <!-- Header -->
+    <header class="restaurant-header">
+        <div class="logo">🍽️ Luxury Dining</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/">🏠 Home</a></li>
+                <li><a href="/rooms">🛏️ Rooms</a></li>
+                <li><a href="/restaurant">🍽️ Restaurant</a></li>
+                <li><a href="#contact">📞 Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <h1>🍷 Welcome to Our Fine Dining Experience</h1>
+        <p>Indulge in world-class cuisine crafted by top chefs.</p>
+    </section>
+
+    <!-- Food Menu Section -->
+    <section class="food-section">
+        <h2>🍽️ Our Signature Dishes</h2>
+        <div class="food-container">
+            <div class="food-card">
+                <img src="/static/images/food1.jpg" alt="Pasta" class="food-image">
+                <h3>Saffron risotto with forest mushrooms</h3>
+                <p>Rich, creamy sauce with fresh herbs</p>
+                <p><strong>$20</strong></p>
+                <button type="button" onclick="openFoodBooking('Italian Pasta', 20)">Order Now</button>
+            </div>
+            <div class="food-card">
+                <img src="/static/images/food2.jpg" alt="Burger" class="food-image">
+                <h3>Chicken tagine makful</h3>
+                <p>Juicy beef patty with fresh veggies</p>
+                <p><strong>$15</strong></p>
+                <button type="button" onclick="openFoodBooking('Classic Burger', 15)">Order Now</button>
+            </div>
+            <div class="food-card">
+                <img src="/static/images/food3.jpg" alt="Pizza" class="food-image">
+                <h3>Chinese chicken salad</h3>
+                <p>Authentic Italian-style </p>
+                <p><strong>$25</strong></p>
+                <button type="button" onclick="openFoodBooking('Wood-Fired Pizza', 25)">Order Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Food Booking Popup Section -->
+    <section id="popupSection">
+        <div class="food-booking-popup" id="foodBookingPopup">
+            <div class="popup-content">
+                <span class="close-btn" onclick="closeFoodBooking()">&times; Close</span>
+                <h2>🍽️ Confirm Your Order</h2>
+
+                <!-- Order Form -->
+                <form action="/order_food" method="POST">
+                    <p><strong id="foodNameDisplay"></strong></p>
+                    <p>Total Price: $<span id="foodPriceDisplay"></span></p>
+
+                    <!-- Hidden Inputs to Pass Data -->
+                    <input type="hidden" id="foodName" name="food_name" value="">
+                    <input type="hidden" id="foodPrice" name="food_price" value="">
+
+                    <button class="confirm-btn" type="submit">✅ Confirm Order</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <footer class="restaurant-footer" id="contact">
+        <h2>📞 Contact Us</h2>
+        <p>📍 123 Luxury St, Dream City</p>
+        <p>📧 Email: contact@luxurystay.com | 📞 Phone: +123 456 7890</p>
+    </footer>
+</body>
+</html>

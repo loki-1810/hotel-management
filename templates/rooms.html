@@ -1,0 +1,86 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Stay</title>
+    <link rel="stylesheet" href="static/css/room.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script defer src="/static/js/script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">🏨 Luxury Stay</div>
+        <nav>
+            <ul>
+                <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="/rooms"><i class="fas fa-bed"></i> Rooms</a></li>
+                <li><a href="/restaurant"><i class="fas fa-utensils"></i> Restaurant</a></li>
+                <li><a href="#contact"><i class="fas fa-phone"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Room Booking Section -->
+    <section class="room-section">
+        <h2>🛏️ Book Your Luxury Room</h2>
+        <div class="room-container">
+            <div class="room-card">
+                <img src="/static/images/room1.jpg" alt="Deluxe Room">
+                <h3>Deluxe Room</h3>
+                <p>$150 / Night</p>
+                <button type="button" onclick="openBookingForm('Deluxe Room', 150)">Book Now</button>
+            </div>
+            <div class="room-card">
+                <img src="/static/images/room2.jpg" alt="Suite Room">
+                <h3>Suite Room</h3>
+                <p>$250 / Night</p>
+                <button type="button" onclick="openBookingForm('Suite Room', 250)">Book Now</button>
+            </div>
+            <div class="room-card">
+                <img src="/static/images/room3.jpg" alt="Presidential Suite">
+                <h3>Presidential Suite</h3>
+                <p>$500 / Night</p>
+                <button type="button" onclick="openBookingForm('Presidential Suite', 500)">Book Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form (Hidden Initially) -->
+    <div class="booking-form" id="bookingForm" style="display: none;">
+        <h2>Complete Your Booking</h2>
+        <form action="/book_room" method="POST">
+            <label>Room Type:</label>
+            <input type="text" id="roomType" name="roomType" readonly>
+            <label>Price:</label>
+            <input type="text" id="roomPrice" name="roomPrice" readonly>
+            <label>User Name:</label>
+            <input type="text" name="userName" placeholder="Enter your name" required>
+            <label>Contact Number:</label>
+            <input type="text" name="contactNumber" placeholder="Enter your contact number" required>
+            <label>Check-in Date:</label>
+
+            <input type="date" id="checkin" name="checkin" required onchange="validateDates()">
+            <label>Check-out Date:</label>
+            <input type="date" id="checkout" name="checkout" required onchange="validateDates()">
+            <label>Guests:</label>
+            <select name="guests" required>
+                <option>1 Guest</option>
+                <option>2 Guests</option>
+                <option>3 Guests</option>
+                <option>4 Guests</option>
+            </select>
+            <button type="submit">Proceed to Payment</button>
+            <button type="button" onclick="closeBookingForm()">Cancel</button>
+        </form>
+    </div>
+
+    <!-- Contact Section -->
+    <footer id="contact">
+        <h2>📞 Contact Us</h2>
+        <p>123 Luxury St, Dream City</p>
+        <p>Email: contact@luxurystay.com | Phone: +123 456 7890</p>
+    </footer>
+
+</body>
+</html>
