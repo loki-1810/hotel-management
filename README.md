@@ -1,1 +1,1 @@
-# hotel-management
+install the depnendencies and enjoyyy 
