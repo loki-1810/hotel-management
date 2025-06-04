@@ -46,7 +46,6 @@ def cancel_order():
         'table_no': table_no
     })
     return {'success': True}
-lokesh than mass 
 
 # -----------------------------
 # User Login
